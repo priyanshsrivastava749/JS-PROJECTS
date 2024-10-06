@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todoself.css">
+    <link href="https://fonts.cdnfonts.com/css/venom" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="venom.jpg" type="image/x-icon">
+    <title>TO DO LIST</title>
+
+</head>
+<body class="body">
+    
+        <div class="img-container"><img src="image/venom.jpg" alt="venomimg" class="venom" >
+        </div>
+        <div class="overlay-items">
+            <h2 id="todoheading">
+                TO DO LIST
+            </h2>
+            <div id="inputt"><input type="text" placeholder="ENTER TO DO..." id="todo-input">
+                <input type="date" id="todo-inputdate">
+                <button id="addbtn" onclick="addItem();
+                audiobgn.play();
+                saver(todoContainer);">Add</button></div>
+            <div id="displaytodo"></div>
+        </div>
+    <script>
+        let todoContainer=JSON.parse(localStorage.getItem('prevtodo'))||[
+  {
+    item:'kill peter parker',
+    dueDate:'08/10/2023'
+  },
+]
+function addItem(){
+    let inputxt = document.querySelector(`#todo-input`);
+    let inputdate = document.querySelector(`#todo-inputdate`);
+    let txtval = inputxt.value;
+    let dateval = inputdate.value;
+    todoContainer.push({
+        item:txtval,dueDate:dateval
+    });
+    inputxt.value='';
+    inputdate.value='';
+    displayItems();
+}
+displayItems();
+function displayItems(){
+let displaycontent=document.querySelector('#displaytodo');
+let newHtml=' ';
+for(let i=0;i<todoContainer.length;i++){
+    newHtml += `<span class="tododisplaytext">${todoContainer[i].item}</span>
+    <span class="displaydate">${todoContainer[i].dueDate}</span>
+    <div><button class="js-delete"
+        onclick="todoContainer.splice(${i},1);
+    displayItems();
+    audiodel.play();
+    saver(todoContainer);">Delete</button></div>`
+}
+displaycontent.innerHTML=newHtml;
+
+}
+const audiobgn=new Audio();
+     audiobgn.src="./audio/LETSDOIT.wav";
+const audiodel=new Audio();
+    audiodel.src="./audio/DONE.wav";
+
+function saver(arr){
+    
+    let arraystring=JSON.stringify(arr);
+    localStorage.setItem('prevtodo',arraystring);
+}
+    </script>
+</body>
+</html>
