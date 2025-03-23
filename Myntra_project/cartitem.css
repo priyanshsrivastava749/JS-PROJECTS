@@ -1,0 +1,126 @@
+#cartmainitemcontainer{
+    width: 80%;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+#cartmain{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-bottom: 20px;
+}
+.cartitems{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cartitemsindividual{
+    display: flex;
+    padding: 6px;
+    width: 60%;
+    height: 150px;
+    border: 1px solid rgba(94, 91, 91, 0.274);
+    margin: 5px;
+    overflow: hidden;  
+
+}
+.cartitemtext{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+.companynameCART{
+    font-size: medium;
+    font-weight: bold;
+}
+.originalpricecart{
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: small;
+    color: rgba(116, 110, 110, 0.773);
+}
+.discountpercentagecart{
+    color: rgba(255, 0, 0, 0.707);
+    font-size: smaller;
+}
+.cartitemimage{
+    width: 100px;
+}
+.returnpolicy{
+    margin-top: 5px;
+}
+.deliverydate{
+    font-size: medium;
+}
+.ordersummary{
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-top: 3px;
+    width: 40%;
+    border-left: 1px solid rgba(94, 91, 91, 0.274);
+}
+@media only screen and (max-width: 1100px){
+    .cartitemsindividual{
+        width: 100%;
+    }
+    .ordersummary{
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 660px){
+    .cartitemsindividual{
+        width: 100%;
+    }
+    .returnpolicy{
+        margin-top: 1px;
+        font-size: small;
+    }
+    .deliverydate{
+        font-size: x-small;
+    }
+    .itemnamecart{
+        font-size: small;
+    }
+    .cartpricing{
+        font-size: small;
+    }
+    .originalpricecart{
+        font-size: x-small;
+    }
+    .discountpercentagecart{
+        font-size: x-small;
+    }
+    .companynameCART{
+        font-size: small;
+        font-weight: bold;
+    }
+}
+
+
+.cartpricelist{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 2px solid rgba(116, 110, 110, 0.403);
+}
+.price_spans{
+    display: flex;
+    justify-content: space-between;
+    margin-top:3px;
+}
+.place-order-btn{
+    width: 100%;
+    border: none;
+    height: 30px;
+    background-color: rgb(241, 72, 100);
+    color: white;
+    cursor: pointer;
+    margin-top: 4px;
+}
+.remove_from_cart{
+    right: 1px;
+    padding-right: 5px;
+    
+    }
