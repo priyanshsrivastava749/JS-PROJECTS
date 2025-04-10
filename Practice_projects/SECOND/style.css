@@ -72,11 +72,5 @@ body {
     border-radius: 10px;
   }
 }
-@media (min-width: 768px) and (max-width: 1024px){
-  .calculator {
-    width: 35vw;       /* Chhoti screen pe zyada width le */     /* Height apne aap adjust ho */
-    padding: 15px;
-    border-radius: 10px;
-  }
-}
+
 
