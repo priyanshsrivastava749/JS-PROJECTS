@@ -64,9 +64,19 @@ body {
 #equalto{
   background-color:rgba(205, 141, 22, 0.805);
 }
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .calculator {
-    width: 80vw;       /* Chhoti screen pe zyada width le */
+    width: 100vw; 
+    height: 100vh;      /* Chhoti screen pe zyada width le */
+    height: 80vh;      /* Height apne aap adjust ho */
+    padding: 15px;
+    border-radius: 10px;
+  }
+}
+@media (min-width: 500px) and (max-width:1000px ) {
+  .calculator {
+    width: 55vw; 
+    height: 100vh;      /* Chhoti screen pe zyada width le */
     height: 80vh;      /* Height apne aap adjust ho */
     padding: 15px;
     border-radius: 10px;
